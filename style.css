@@ -1,0 +1,718 @@
+:root {
+	--bg: #e9f1ce;
+	--card: #c9ceb3;
+	--text: #454545;
+	--muted: #667085;
+	--border: #d5d566;
+	--accent: #e6f16c;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.kiwi-maru-regular {
+	font-family: "Kiwi Maru", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--text);
+	font-family: "Kiwi Maru", serif;
+}
+
+.container {
+	max-width: 980px;
+	margin: 32px auto;
+	padding: 0 16px;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: space-between;
+	margin-bottom: 16px;
+	gap: 8px;
+}
+
+.header h1 {
+	font-size: 20px;
+	margin: 0;
+}
+
+a {
+	color: var(--text);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: var(--text);
+}
+
+.nav a {
+	display: inline-block;
+	padding: 8px 12px;
+	margin: 0 4px;
+	border: 1px solid var(--border);
+	border-radius: 10px;
+	text-decoration: none;
+	color: var(--text);
+}
+
+.nav a.current {
+	background: var(--accent);
+	color: #d5996b;
+	border-color: var(--accent);
+}
+
+.calendar {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 4px;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+.weekday {
+	font-size: 12px;
+	color: var(--muted);
+	text-align: center;
+	margin-bottom: 6px;
+}
+
+.day {
+	background: var(--card);
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	padding: 8px;
+	min-height: 72px;
+	padding: 4px;
+	font-size: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.day .date {
+	font-weight: 700;
+}
+
+.day.today {
+	outline: 2px solid #56b83e;
+}
+
+.event {
+	font-size: 12px;
+	padding: 4px 6px;
+	border-radius: 8px;
+	background: rgb(255, 243, 238);
+	word-break: break-word;
+}
+
+.event .time {
+	opacity: .7;
+	margin-right: 6px;
+}
+
+.add {
+	margin-top: auto;
+	text-align: right;
+}
+
+.add a {
+	font-size: 12px;
+	text-decoration: none;
+	color: var(--accent);
+}
+
+@media (max-width:720px) {
+	.calendar {
+		gap: 6px;
+	}
+
+	.day {
+		min-height: 96px;
+		padding: 6px;
+	}
+}
+
+/* 追加 */
+.next-up {
+	margin: 18px 0;
+	padding: 12px;
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	background: #ffffff8e;
+}
+
+.next-up h2 {
+	margin: 0 0 8px;
+	font-size: 16px;
+}
+
+.next-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 10px;
+}
+
+.card {
+	border: 1px solid var(--border);
+	background: #c9ceb3;
+	border-radius: 12px;
+	padding: 12px;
+}
+
+.badge {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 999px;
+	border: 1px solid var(--border);
+	font-size: 12px;
+}
+
+.badge.soon {
+	border-color: var(--accent);
+}
+
+.badge.special {
+	border-color: var(--accent);
+	font-weight: 600;
+}
+
+.event a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.count-mini {
+	font-size: 12px;
+	opacity: .85;
+}
+
+.form {
+	max-width: 560px;
+	margin: 24px auto;
+	background: #ffffff8e;
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	padding: 16px;
+}
+
+.form h2 {
+	margin: 0 0 12px;
+}
+
+.form label {
+	display: block;
+	margin: 10px 0 4px;
+	color: var(--muted);
+}
+
+.form input,
+.form textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid var(--border);
+	border-radius: 10px;
+}
+
+.form button {
+	margin-top: 12px;
+	padding: 10px 14px;
+	border-radius: 10px;
+	border: 1px solid var(--border);
+	background: var(--accent);
+	color: var(--text);
+	cursor: pointer;
+}
+
+.form button:hover {
+	box-shadow: 0 0 15px #818b7e;
+}
+
+.hero {
+	max-width: 780px;
+	margin: 32px auto;
+	padding: 24px;
+	background: #ffffff8e;
+	border: 1px solid var(--border);
+	border-radius: 16px;
+	text-align: center;
+}
+
+.big {
+	font-size: 40px;
+	letter-spacing: 1px;
+	margin: 10px 0;
+}
+
+.note {
+	color: var(--muted);
+}
+
+.btn {
+	display: inline-flex;
+	height: 40px;
+	padding: 0 14px;
+	border-radius: 12px;
+	border: 1px dotted var(--border);
+	background: var(--accent);
+	color: #d5996b;
+	text-decoration: none;
+	font-weight: 600;
+	text-align: center;
+	align-items: center;
+	line-height: 1.4;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.btn:hover {
+	box-shadow: 0 0 15px #818b7e;
+}
+
+.actions {
+	margin: 8px 0 16px;
+}
+
+.today-btn {
+	margin-left: 8px;
+	padding: 6px 10px;
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	background: #ffffff8e;
+	text-decoration: none;
+	color: var(--primary);
+	font-size: 13px;
+}
+
+.today-btn:hover {
+	background: var(--primary);
+	color: #fff;
+}
+
+.nav a.beforemnt {
+	background: #ffffff8e;
+}
+
+.nav a.beforemnt:hover {
+	background: var(--primary);
+	color: #fff;
+}
+
+.nav a.aftermnt {
+	background: #ffffff8e;
+}
+
+.nav a.aftermnt:hover {
+	background: var(--primary);
+	color: #fff;
+}
+
+.color-options {
+	display: flex;
+}
+
+.color-options input {
+	display: none;
+}
+
+.color-options span {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	cursor: pointer;
+	border: 2px solid #ccc;
+	margin-right: 8px;
+}
+
+.color-options input:checked+span {
+	border-color: #000;
+}
+
+/* ドロップダウンの選択肢 */
+.choices__list--dropdown .choices__item[data-custom-properties="normal"] {
+	color: #333;
+}
+
+.choices__list--dropdown .choices__item[data-custom-properties="special"] {
+	color: #e5484d;
+	font-weight: bold;
+}
+
+/* 選択後に表示されるアイテム */
+.choices__list--single .choices__item[data-custom-properties="special"] {
+	color: #e5484d;
+	font-weight: bold;
+}
+
+.event-actions {
+	font-size: 12px;
+	opacity: .8;
+	margin-top: 4px;
+}
+
+button.linklike {
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	color: var(--accent);
+}
+
+button.linklike.danger {
+	color: #e5484d;
+}
+
+button.linklike:hover {
+	text-decoration: underline;
+}
+
+.error {
+	background: #ffe9ec;
+	color: #b42318;
+	border: 1px solid #f4c7cc;
+	padding: 8px 10px;
+	border-radius: 8px;
+	margin: 8px 0;
+}
+
+.info {
+	background: #eef7ff;
+	color: #1d4ed8;
+	border: 1px solid #c7ddff;
+	padding: 8px 10px;
+	border-radius: 8px;
+	margin: 8px 0;
+}
+
+/* 1) タイポ & 余白を可変に */
+:root {
+	--space: clamp(8px, 1.5vw, 16px);
+	--radius: 12px;
+}
+
+.container {
+	padding: 0 var(--space);
+}
+
+.header {
+	flex-wrap: wrap;
+	gap: var(--space);
+}
+
+.header h1 {
+	font-size: clamp(16px, 2.2vw, 20px);
+}
+
+/* 2) ナビとアクションの折り返し */
+.nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	justify-content: center;
+	width: 100%;
+}
+
+.actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	justify-content: center;
+	width: 100%;
+}
+
+.btn {
+	white-space: nowrap;
+}
+
+/* 3) カレンダーのグリッド調整（小さい画面でギュッと） */
+.calendar {
+	gap: clamp(4px, 1vw, 8px);
+}
+
+.day {
+	min-height: clamp(84px, 16vw, 120px);
+	border-radius: var(--radius);
+	padding: clamp(6px, 1.2vw, 8px);
+}
+
+.weekday {
+	font-size: clamp(11px, 1.6vw, 12px);
+}
+
+/* 4) 近日カードのレスポンシブ */
+.next-list {
+	grid-template-columns: repeat(3, minmax(220px, 1fr));
+}
+
+@media (max-width: 1024px) {
+	.next-list {
+		grid-template-columns: repeat(2, minmax(220px, 1fr));
+	}
+}
+
+.event-dots {
+	display: none;
+}
+
+@media (max-width: 600px) {
+
+	.nav a.current {
+		display: none;
+	}
+
+	.nav a.beforemnt {
+		display: none;
+		background: #ffffff8e;
+	}
+	
+	.nav a.beforemnt:hover {
+		display: none;
+		background: var(--primary);
+		color: #fff;
+	}
+	
+	.nav a.aftermnt {
+		display: none;
+		background: #ffffff8e;
+	}
+	
+	.nav a.aftermnt:hover {
+		display: none;
+		background: var(--primary);
+		color: #fff;
+	}
+
+	.next-list {
+		grid-template-columns: 1fr;
+	}
+
+	.weekday {
+		font-size: 11px;
+	}
+
+	.date {
+		font-size: 12px;
+	}
+
+	.event {
+		display: none;
+	}
+
+	.event-dots {
+		display: flex;
+		gap: 6px;
+		align-items: center;
+		margin-top: 6px;
+		flex-wrap: nowrap;
+	}
+
+	.event-dots .dot {
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		flex: 0 0 auto;
+		box-shadow: 0 0 0 1px rgba(0, 0, 0, .06) inset;
+	}
+
+	.event-dots .more {
+		font-size: 11px;
+		color: var(--muted);
+	}
+}
+
+/* 5) ボタンの高さ・並び（スマホで押しやすく） */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	padding: 0 14px;
+	border-radius: var(--radius);
+}
+
+.form-actions {
+	display: flex;
+	gap: 8px;
+	margin-top: 12px;
+}
+
+@media (max-width: 480px) {
+	.form-actions {
+		flex-direction: column;
+	}
+
+	.form-actions .btn {
+		width: 100%;
+	}
+}
+
+/* 6) 曜日表示の簡略（超小画面で頭文字だけ） */
+@media (max-width: 420px) {
+	.weekday {
+		letter-spacing: .2px;
+	}
+
+	.weekday::after {
+		content: attr(data-short);
+	}
+
+	/* 使うなら下のHTMLヒント参照 */
+}
+
+/* 7) 細かい見やすさ調整 */
+.event {
+	font-size: clamp(11px, 1.6vw, 12px);
+}
+
+.count-mini {
+	font-size: clamp(11px, 1.6vw, 12px);
+}
+
+.badge {
+	font-size: clamp(11px, 1.6vw, 12px);
+}
+
+/* 8) iPhoneのセーフエリアに配慮（PWA化を見据えて） */
+@supports(padding:max(0px)) {
+	body {
+		padding-bottom: max(0px, env(safe-area-inset-bottom));
+	}
+}
+
+/* --- Modal --- */
+.modal[hidden] {
+	display: none;
+}
+
+.modal {
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+}
+
+.modal__backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, .35);
+}
+
+.modal__panel {
+	position: relative;
+	margin: 8vh auto 0;
+	max-width: 520px;
+	width: calc(100% - 32px);
+	background: #fff;
+	border: 1px solid var(--border);
+	border-radius: 14px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
+	overflow: hidden;
+}
+
+.modal__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 14px;
+	border-bottom: 1px solid var(--border);
+}
+
+.modal__close {
+	background: none;
+	border: none;
+	font-size: 22px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.modal__body {
+	padding: 12px 14px;
+	max-height: 65vh;
+	overflow: auto;
+}
+
+.modal__item {
+	display: flex;
+	gap: 10px;
+	align-items: flex-start;
+	padding: 10px;
+	border: 1px solid var(--border);
+	border-radius: 10px;
+	margin-bottom: 8px;
+}
+
+.modal__dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin-top: 6px;
+	flex: 0 0 auto;
+}
+
+.modal__title a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.modal__meta {
+	font-size: 12px;
+	color: var(--muted);
+	margin-top: 2px;
+}
+
+.badge-mini {
+	display: inline-block;
+	padding: 1px 6px;
+	border-radius: 999px;
+	border: 1px solid currentColor;
+	font-size: 11px;
+	margin-left: 6px;
+}
+
+/* スマホでも見やすく */
+@media (max-width:600px) {
+	.modal__panel {
+		margin-top: 6vh;
+	}
+}
+
+/* 固定 “今月へ” */
+.fab-today{
+  position: fixed;
+  right: 14px;
+  bottom: 16px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 14px;
+  background: #ffd84d;
+  color: #333;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+}
+@media (hover:hover){
+  .fab-today:hover{ filter: brightness(0.98); }
+}
+
+/* （任意）前後月リンクをPCだけ残す場合 */
+@media (max-width: 768px){
+  .nav { display: none; }
+}
